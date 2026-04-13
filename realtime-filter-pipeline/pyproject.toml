@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "realtime-filter-pipeline"
+version = "0.1.0"
+description = "Composable real-time filters for smoothing, derivative estimation, and online signal processing."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [
+  { name = "Ventsi Iliev" }
+]
+dependencies = [
+  "numpy>=1.24",
+]
+keywords = ["filters", "streaming", "signal-processing", "robotics", "vision", "pid"]
+
+[project.scripts]
+rtfp-playground = "realtime_filter_pipeline.examples.playground:main"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
